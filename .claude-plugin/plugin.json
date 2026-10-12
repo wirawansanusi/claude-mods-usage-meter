@@ -4,6 +4,7 @@
   "description": "A card above the prompt: context window by category, 5-hour and weekly usage against time elapsed, and prompt-cache warmth.",
   "author": { "name": "Wirawan" },
   "repository": "https://github.com/wirawansanusi/claude-mods-usage-meter",
+  "license": "MIT",
   "types": "./types/index.d.ts",
   "userConfig": {
     "cacheTtl": {

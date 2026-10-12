@@ -16,7 +16,7 @@ In a terminal session:
 /plugin install usage-meter --marketplace wirawansanusi/claude-mods-usage-meter
 ```
 
-Answer `y` to add the marketplace, then pick a scope (user, to have it in every session).
+Answer `y` to add the marketplace, then pick a scope (user, to have it in every session). Keep the prompt-cache lifetime at `1h` or pick `5m`, and save. The card appears right away.
 
 ## Options
 
@@ -33,6 +33,7 @@ Nothing. The mod only reads figures Claude Code already has and draws them. It a
 - **Rate limits need a subscription.** On an API-key account the two limit columns say "Waiting for a reading".
 - **Cache warmth is an estimate.** The API doesn't report it, so it is the time since the last response against the configured lifetime. After a mod reload or a resumed session the column says "Waiting for a reply" until the next response.
 - **Categories come from `/context`'s row names**: system prompt, tools, memory files, messages. A row it doesn't know is counted under "Other", so the totals stay right.
+- **The split between categories is an estimate.** The `summary` breakdown estimates each category locally, while `/context` counts them with the token-count API, so the two can differ. The total is the last response's own figure, so it matches `/context` after each response.
 
 ## Development
 
@@ -51,3 +52,7 @@ tsc -p .                   # type-check, once Claude Code has loaded the mod and
 | `types/index.d.ts` | The contract for the mod's state. |
 
 Run it from a clone with `claude --plugin-dir <folder>`, or add the folder as a marketplace (`claude plugin marketplace add <folder>`) and install it from there.
+
+## License
+
+[MIT](LICENSE)
