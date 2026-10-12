@@ -1,0 +1,6 @@
+{
+  "name": "wirawan-mods",
+  "owner": { "name": "Wirawan" },
+  "description": "Wirawan's own Claude Code mods.",
+  "plugins": [{ "name": "usage-meter", "source": "./" }]
+}
